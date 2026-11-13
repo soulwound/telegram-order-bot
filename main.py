@@ -469,7 +469,9 @@ async def admin_callback(
         if status:
             update_request_status(int(request_id), status)
 
-            await query.answer("Статус обновлён.")
+            await query.edit_message_text(
+                "Статус обновлён.\n\n" + ...
+            )
 
             request = get_request(int(request_id))
 
